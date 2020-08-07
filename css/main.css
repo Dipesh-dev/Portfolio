@@ -23,17 +23,10 @@ a:hover {
 }
 
 /* Styling background-image */
-/* body {
-    width: 100vw;
-    height: 15.5rem;
-    background-image: url(../resources/safar-safarov-MSN8TFhJ0is-unsplash.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-} */
 .background {
     width: 100%;
     height: 250px;
-    background: url(../resources/safar-safarov-MSN8TFhJ0is-unsplash.jpg);
+    background: url(../resources//safar-safarov-MSN8TFhJ0is-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -42,16 +35,6 @@ a:hover {
 }
 
 /* image overlay */
-/* body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.38);
-    width: inherit;
-    height: inherit;
-    z-index: -10;
-} */
 .background::after {
     content: "";
     position: absolute;

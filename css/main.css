@@ -87,28 +87,6 @@ header {
     align-items: center;
 }
 
-.menu button {
-    position: relative;
-    z-index: 100;
-}
-
-.menu a {
-    z-index: 10;
-}
-
-.menu a:hover {
-    height: 100vh;
-    width: 100vw;
-    color: var(--main-color);
-}
-
-.menu button {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    
-}
-
 .navs {
     position: absolute;
     top: 8%;
@@ -119,14 +97,92 @@ header {
     transform: translateY(-8vh);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 5rem;
+    justify-content: center;
     text-align: center;
     color: #fff;
+    animation: left 0.4s ease-in-out;
 }
+
+.navs li {
+    padding: 1rem 0;
+}
+
+@keyframes left {
+    0% {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.58);
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    border-radius: 0.5rem;
+    height: 10px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    border-radius: 0.5rem;
+    background: #fff;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+}
+
+.line:hover,.line:hover::after, .line:hover::before {
+    background-color: var(--main-color);
+}
+
+.line::after, .line::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+    top: -0.3rem;
+    left: 0;
+    background: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.line::after {
+    top: 0.3rem;
+}
+
+.line.open {
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.line.open::before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.line.open::after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
 
 .none {
     display: none;
+    animation: left 0.4s ease-in-out;
 }
 
 /* info Styling */
@@ -419,7 +475,7 @@ footer span{
     }
 
     /* navbar */
-    .menu {
+    .hamburger {
         display: none;
     }
 
@@ -435,8 +491,9 @@ footer span{
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
-        margin-top: -1.5rem;
+        margin-top: 1.5rem;
         padding-right: 8rem;
+	animation: none;
     }
 
     .container{
